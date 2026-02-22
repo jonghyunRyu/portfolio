@@ -2,6 +2,10 @@
 
 Next.js와 Tailwind CSS로 제작한 프론트엔드 개발자 포트폴리오 웹사이트입니다.
 
+## 🚀 배포 
+
+👉 https://rjh-portfolio.vercel.app/
+
 ## 🎨 주요 특징
 
 - **반응형 레이아웃**: 모바일, 태블릿, 데스크톱 모든 기기에서 최적화
@@ -103,47 +107,14 @@ portfolio/
 - 호버 효과가 있는 스킬 아이템
 
 ### Archiving Section
-- GitHub, Blog, Notion 등 링크 카드
+- GitHub, Blog 링크 카드
 - 외부 링크로 연결
-
-## 🎨 커스터마이징
-
-### 개인 정보 수정
-
-각 컴포넌트 파일에서 `[이름]`, `[대학교]` 등의 플레이스홀더를 본인의 정보로 변경하세요.
-
-**수정이 필요한 파일:**
-- `components/Hero.tsx` - 이름
-- `components/About.tsx` - 개인정보, 소개
-- `components/Projects.tsx` - 프로젝트 정보
-- `components/Skills.tsx` - 보유 스킬
-- `components/Archiving.tsx` - 링크 URL
-- `components/Footer.tsx` - 연락처 정보
-
-### 색상 변경
-
-`app/globals.css` 파일에서 색상 변수를 수정하여 전체 테마를 변경할 수 있습니다.
-
-```css
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-}
-```
 
 ## 📱 반응형 디자인
 
 - **Desktop (1024px+)**: 전체 레이아웃, 스크롤 인디케이터 표시
 - **Tablet (768px - 1023px)**: 그리드 레이아웃 조정
 - **Mobile (~767px)**: 햄버거 메뉴, 단일 컬럼 레이아웃
-
-## 🚀 배포
-
-### Vercel
-
-# 배포
-vercel
-```
 
 ## 🤝 기여
 
