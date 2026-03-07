@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 export default function Hero() {
   const scrollToAbout = () => {
-    const element = document.getElementById('about');
+    const element = document.getElementById("about");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -29,12 +29,24 @@ export default function Hero() {
           아름답고 효율적인 웹을 만드는 개발자입니다
         </p>
         <button
+          type="button"
           onClick={scrollToAbout}
           className="group px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-full font-medium transition-all shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center gap-2 animate-gentle-bounce border border-slate-600"
         >
           더 알아보기
-          <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <svg
+            className="w-5 h-5 group-hover:translate-y-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
           </svg>
         </button>
       </div>
