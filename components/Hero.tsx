@@ -25,8 +25,7 @@ export default function Hero() {
         </h1>
         <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
           배움을 통해 성장하고 "왜"를 고민하며
-          <br />
-          더 나은 사용자 경험을 고민하는 프론트 엔드 개발자입니다
+          <br />더 나은 사용자 경험을 고민하는 프론트 엔드 개발자입니다
         </p>
         <button
           type="button"
