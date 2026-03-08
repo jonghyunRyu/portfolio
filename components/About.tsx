@@ -1,11 +1,11 @@
 export default function About() {
   const personalInfo = [
-    { label: "이름", value: "[이름]" },
-    { label: "생년월일", value: "00.00.00" },
-    { label: "연락처", value: "010-0000-0000" },
-    { label: "이메일", value: "your.email@example.com" },
-    { label: "학력", value: "[대학교] [전공]" },
-    { label: "주소지", value: "[지역]" },
+    { label: "이름", value: "류종현" },
+    { label: "생년월일", value: "1995.09.03" },
+    { label: "연락처", value: "010-4159-8707" },
+    { label: "이메일", value: "whdgus5542@gmail.com" },
+    { label: "학력", value: "가천대학교 (전자공학과)" },
+    { label: "주소지", value: "경기도 성남시 분당구" },
   ];
 
   return (
@@ -44,7 +44,7 @@ export default function About() {
               소개
             </h3>
             <p className="text-slate-100 mb-4 leading-relaxed">
-              안녕하세요! 프론트엔드 개발자를 꿈꾸는 [이름]입니다.
+              안녕하세요! 프론트엔드 개발자를 꿈꾸는 류종현입니다.
             </p>
             <p className="text-slate-200 mb-4 leading-relaxed">
               사용자 경험을 최우선으로 생각하며, 깔끔하고 효율적인 코드를
