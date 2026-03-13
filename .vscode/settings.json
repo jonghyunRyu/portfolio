@@ -1,0 +1,7 @@
+{
+  "kiroAgent.configureMCP": "Disabled",
+  "typescript.autoClosingTags": false,
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "eslint.enable": false
+}
