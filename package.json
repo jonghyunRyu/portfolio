@@ -11,9 +11,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
@@ -22,6 +26,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
