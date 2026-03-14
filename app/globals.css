@@ -60,6 +60,15 @@
     scrollbar-width: thin;
     scrollbar-color: #475569 transparent;
   }
+
+  /* 스크롤바 숨기기 (스크롤 기능 유지) */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @theme inline {
