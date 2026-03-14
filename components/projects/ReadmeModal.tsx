@@ -57,28 +57,33 @@ export default function ReadmeModal({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+            className="p-2 hover:bg-slate-500 rounded-full transition-colors"
             aria-label="Close modal"
           >
-            <X />
+            <X color="white" />
           </button>
         </div>
 
-        <div className="p-8 overflow-y-auto scrollbar-hide">
+        <div className="px-8 overflow-y-auto scrollbar-hide">
           <article
-            className="prose prose-slate max-w-none 
-              prose-headings:text-slate-900 prose-h1:text-3xl prose-h2:text-2xl 
-              prose-h3:text-xl prose-p:text-slate-700 prose-p:leading-relaxed 
+            className="prose prose-md prose-slate max-w-none 
+              prose-headings:text-slate-900 prose-headings:mt-6 prose-headings:mb-3
+              prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg
+              prose-p:text-slate-700 prose-p:leading-relaxed prose-p:my-3
               prose-a:text-slate-600 prose-a:underline 
               hover:prose-a:text-slate-900 prose-strong:text-slate-900 
               prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 
-              prose-code:rounded prose-code:text-slate-100 prose-code:text-sm 
+              prose-code:rounded prose-code:text-slate-100 prose-code:text-xs 
               prose-code:before:content-none prose-code:after:content-none 
               prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-pre:border
-              prose-pre:border-slate-700 prose-pre:rounded-xl prose-ul:text-slate-700 
-              prose-ol:text-slate-700 prose-li:marker:text-slate-400 prose-blockquote:border-slate-300 
-              prose-blockquote:text-slate-600 prose-hr:border-slate-200 prose-img:rounded-xl 
-              prose-table:text-sm prose-th:text-slate-900 prose-td:text-slate-700"
+              prose-pre:border-slate-700 prose-pre:rounded-xl prose-pre:my-3 prose-pre:text-xs
+              prose-ul:text-slate-700 prose-ul:my-3
+              prose-ol:text-slate-700 prose-ol:my-3
+              prose-li:marker:text-slate-400 prose-li:my-1
+              prose-blockquote:border-slate-300 prose-blockquote:text-slate-600 
+              prose-hr:border-slate-200 prose-hr:my-5
+              prose-img:rounded-xl 
+              prose-table:text-xs prose-th:text-slate-900 prose-td:text-slate-700"
           >
             <Markdown remarkPlugins={[remarkGfm]}>{readme}</Markdown>
           </article>
