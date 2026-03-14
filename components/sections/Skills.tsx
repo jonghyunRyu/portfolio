@@ -1,29 +1,29 @@
 import type { ReactNode } from "react";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiHtml5,
-  SiCss,
-  SiVite,
-  SiTailwindcss,
-  SiStyledcomponents,
-  SiThreedotjs,
-  SiShadcnui,
-  SiGithub,
-  SiFigma,
-  SiNotion,
-  SiJira,
-  SiVercel,
-  SiSlack,
-  SiMysql,
-  SiSpring,
-  SiCoderabbit,
-  SiLefthook,
-  SiVanillaextract,
-} from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import {
+  SiCoderabbit,
+  SiCss,
+  SiFigma,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiJira,
+  SiLefthook,
+  SiMysql,
+  SiNextdotjs,
+  SiNotion,
+  SiReact,
+  SiShadcnui,
+  SiSlack,
+  SiSpring,
+  SiStyledcomponents,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiTypescript,
+  SiVanillaextract,
+  SiVercel,
+  SiVite,
+} from "react-icons/si";
 
 import SkillBadge from "../ui/SkillBadge";
 
