@@ -119,7 +119,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="flex items-center justify-center pt-16 bg-slate-50"
+      className="flex items-center justify-center py-12 bg-slate-50"
     >
       <div className="max-w-[1400px] mx-auto px-4 py-16">
         <div className="text-center mb-12">

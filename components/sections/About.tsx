@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex items-center justify-center pt-16 bg-slate-50"
+      className="flex items-center justify-center pt-12 bg-slate-50"
     >
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
