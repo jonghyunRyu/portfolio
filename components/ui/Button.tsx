@@ -4,7 +4,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "dark";
   size?: "sm" | "md" | "lg";
   children: ReactNode;
-  icon?: ReactNode;
   fullWidth?: boolean;
 }
 
@@ -12,7 +11,6 @@ export default function Button({
   variant = "primary",
   size = "md",
   children,
-  icon,
   fullWidth = false,
   className = "",
   ...props
@@ -43,7 +41,6 @@ export default function Button({
       {...props}
     >
       {children}
-      {icon && icon}
     </button>
   );
 }
