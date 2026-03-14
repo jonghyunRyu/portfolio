@@ -1,35 +1,7 @@
+import { projects } from "@/data/projects";
 import ProjectCard from "../projects/ProjectCard";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "프로젝트 1",
-      period: "2024.01 - 2024.03",
-      description: "프로젝트의 주요 내용을 설명합니다.",
-      subDescription: "프로젝트에 대한 추가 설명이나 배경을 작성합니다.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-      link: "https://github.com/yourusername/project1",
-      readme:
-        "# 프로젝트 1\n\n프로젝트에 대한 상세한 README 내용입니다.\n\n## 주요 기능\n- 기능 1\n- 기능 2\n- 기능 3",
-    },
-    {
-      title: "프로젝트 2",
-      period: "2023.09 - 2023.12",
-      description: "프로젝트의 주요 내용을 설명합니다.",
-      subDescription: "프로젝트에 대한 추가 설명이나 배경을 작성합니다.",
-      tech: ["React", "Node.js", "MongoDB"],
-      link: "https://github.com/yourusername/project2",
-      readme: "# 프로젝트 2\n\n프로젝트에 대한 상세한 README 내용입니다.",
-    },
-    {
-      title: "프로젝트 3",
-      period: "2023.06 - 2023.08",
-      description: "프로젝트의 주요 내용을 설명합니다.",
-      tech: ["Vue.js", "Firebase", "CSS"],
-      link: "https://github.com/yourusername/project3",
-    },
-  ];
-
   return (
     <section
       id="projects"
