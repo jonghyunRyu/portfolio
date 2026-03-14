@@ -1,19 +1,19 @@
 "use client";
 
-import { BookOpenText } from "lucide-react";
+import { BookOpenText, ExternalLink, Play } from "lucide-react";
 import { useState } from "react";
+import type { ProjectAction } from "@/data/projects";
 import Button from "../ui/Button";
-import ProjectModal from "./ProjectModal";
 import ReadmeModal from "./ReadmeModal";
 
 interface ProjectCardProps {
   title: string;
   period: string;
   description: string;
-  subDescription?: string;
+  subDescription: string[];
   tech: string[];
   link?: string;
-  readme?: string;
+  actions?: ProjectAction[];
   index: number;
 }
 
@@ -24,85 +24,156 @@ export default function ProjectCard({
   subDescription,
   tech,
   link,
-  readme,
+  actions = [],
   index,
 }: ProjectCardProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isReadmeOpen, setIsReadmeOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+
+  const readmeAction = actions.find((a) => a.type === "readme");
+  const githubAction = actions.find((a) => a.type === "github");
+  const mediaAction = actions.find((a) => a.type === "media");
+  const linkActions = actions.filter((a) => a.type === "link");
+  const figmaAction = actions.find((a) => a.type === "figma");
 
   return (
     <>
-      <div className="group bg-slate-50 rounded-3xl border border-slate-200 p-8 hover:shadow-2xl hover:border-slate-300 transition-all hover:-translate-y-2 min-h-[400px] flex flex-col">
-        <div className="w-14 h-14 bg-slate-700 rounded-2xl mb-5 flex items-center justify-center text-white font-bold text-xl">
-          {index + 1}
+      <div className="group max-w-xl bg-slate-50 rounded-3xl border border-slate-200 p-10 hover:shadow-2xl hover:border-slate-300 transition-all hover:-translate-y-2 flex flex-col">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-12 h-12 bg-slate-700 rounded-2xl flex items-center justify-center text-white font-bold text-lg shrink-0">
+            {index + 1}
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+            <p className="text-sm text-slate-500">{period}</p>
+          </div>
         </div>
 
-        <h3 className="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
+        <div className="border-t border-slate-200 pt-4 mb-2" />
+        {description && (
+          <p className="text-base font-bold mb-4">{description}</p>
+        )}
+        <ul className="list-disc list-outside pl-5 space-y-1.5 mb-5">
+          {subDescription.map((desc) => (
+            <li
+              key={desc}
+              className="text-sm font-medium text-slate-800 leading-relaxed"
+            >
+              {desc}
+            </li>
+          ))}
+        </ul>
 
-        <p className="text-sm text-slate-500 mb-4">{period}</p>
-
-        <p className="text-base text-slate-800 mb-2 leading-relaxed">
-          {description}
-        </p>
-        {subDescription && (
-          <p className="text-sm text-slate-600 mb-5 leading-relaxed">
-            {subDescription}
-          </p>
+        {link && (
+          <div className="border-l-4 border-slate-400 pl-3 mb-5">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-sky-600 hover:text-sky-800 hover:underline transition-colors break-all"
+            >
+              {link}
+            </a>
+          </div>
         )}
 
-        <div className="flex flex-wrap gap-2 mb-5">
-          {tech.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1.5 bg-slate-200 text-slate-700 rounded-lg text-sm font-medium"
-            >
-              {t}
-            </span>
-          ))}
+        <div className="bg-orange-50 border border-orange-300 rounded-xl p-4 mb-5">
+          <p className="text-sm font-medium text-slate-800">
+            {tech.join(", ")}
+          </p>
         </div>
 
-        <div className="flex gap-3 mt-auto">
-          <Button
-            variant="primary"
-            size="sm"
-            fullWidth
-            onClick={() => setIsModalOpen(true)}
-            className="group-hover:gap-2"
-          >
-            자세히 보기
-          </Button>
-          {readme && (
-            <Button
-              variant="dark"
-              size="sm"
-              onClick={() => setIsReadmeOpen(true)}
-              aria-label="View README"
-            >
-              <BookOpenText size={18} />
-              README
-            </Button>
-          )}
-        </div>
+        {actions.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {readmeAction && readmeAction.type === "readme" && (
+              <Button
+                variant="dark"
+                size="sm"
+                onClick={() => setActiveModal("readme")}
+                aria-label="View README"
+              >
+                <BookOpenText size={16} />
+                README
+              </Button>
+            )}
+            {githubAction && githubAction.type === "github" && (
+              <a
+                href={githubAction.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="dark" size="sm" aria-label="GitHub">
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </Button>
+              </a>
+            )}
+            {figmaAction && figmaAction.type === "figma" && (
+              <a
+                href={figmaAction.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="dark" size="sm" aria-label="Figma">
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.02c0 1.689 1.377 3.068 3.067 3.068 1.691 0 3.067-1.38 3.067-3.068v-3.02H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.098-7.509a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.354 3.02 3.019 3.02h.098c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.019-3.019-3.019h-.098z" />
+                  </svg>
+                  Figma
+                </Button>
+              </a>
+            )}
+            {mediaAction && mediaAction.type === "media" && (
+              <a
+                href={mediaAction.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="dark" size="sm" aria-label="Figma">
+                  <Play size={18} />
+                  영상
+                </Button>
+              </a>
+            )}
+            {linkActions.map((action) =>
+              action.type === "link" ? (
+                <a
+                  key={action.url}
+                  href={action.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="dark"
+                    size="sm"
+                    aria-label={action.label || "링크"}
+                  >
+                    <ExternalLink size={16} />
+                    {action.label || "링크"}
+                  </Button>
+                </a>
+              ) : null,
+            )}
+          </div>
+        )}
       </div>
 
-      <ProjectModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title={title}
-        period={period}
-        description={description}
-        subDescription={subDescription}
-        tech={tech}
-        link={link}
-        readme={readme}
-      />
-
-      {readme && (
+      {readmeAction && readmeAction.type === "readme" && (
         <ReadmeModal
-          isOpen={isReadmeOpen}
-          onClose={() => setIsReadmeOpen(false)}
+          isOpen={activeModal === "readme"}
+          onClose={() => setActiveModal(null)}
           title={title}
-          readme={readme}
+          readme={readmeAction.content}
         />
       )}
     </>

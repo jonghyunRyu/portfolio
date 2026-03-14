@@ -22,7 +22,7 @@ export default function Projects() {
               subDescription={project.subDescription}
               tech={project.tech}
               link={project.link}
-              readme={project.readme}
+              actions={project.actions}
               index={index}
             />
           ))}
