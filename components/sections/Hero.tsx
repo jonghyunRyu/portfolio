@@ -19,14 +19,13 @@ export default function Hero() {
           안녕하세요!
           <br />
           <span className="bg-gradient-to-r from-slate-300 to-slate-400 bg-clip-text text-transparent">
-            [이름]
+            류종현
           </span>
           입니다
         </h1>
         <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          사용자 경험을 최우선으로 생각하며,
-          <br />
-          아름답고 효율적인 웹을 만드는 개발자입니다
+          배움을 통해 성장하고 "왜"를 고민하며
+          <br />더 나은 사용자 경험을 고민하는 프론트 엔드 개발자입니다
         </p>
         <button
           type="button"
