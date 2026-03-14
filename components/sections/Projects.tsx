@@ -7,7 +7,7 @@ export default function Projects() {
       id="projects"
       className="flex items-center justify-center bg-white pt-16"
     >
-      <div className="max-w-[1400px] mx-auto px-4 py-16">
+      <div className="max-w-[1400px] mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-slate-900 mb-3">Projects</h2>
           <div className="w-20 h-1 bg-slate-700 mx-auto rounded-full" />
