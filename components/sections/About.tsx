@@ -43,17 +43,39 @@ export default function About() {
               <span className="w-1.5 h-8 bg-white rounded-full mr-3" />
               소개
             </h3>
-            <p className="text-slate-100 mb-4 leading-relaxed">
-              안녕하세요! 프론트엔드 개발자를 꿈꾸는 류종현입니다.
+            <p className="text-lg font-semibold text-white mb-6 leading-relaxed">
+              복잡성을 단순함으로 설계하는 프론트엔드 개발자 <br />
+              류종현입니다.
             </p>
-            <p className="text-slate-200 mb-4 leading-relaxed">
-              사용자 경험을 최우선으로 생각하며, 깔끔하고 효율적인 코드를
-              작성하기 위해 노력합니다.
-            </p>
-            <p className="text-slate-200 leading-relaxed">
-              React, Next.js, TypeScript를 활용한 모던 웹 개발에 관심이 많으며,
-              지속적인 학습을 통해 성장하는 개발자가 되고자 합니다.
-            </p>
+            <div className="space-y-4">
+              <div className="bg-white/10 rounded-2xl p-5">
+                <h4 className="text-sm font-bold text-amber-300 mb-2">
+                  주도적인 아키텍처 설계
+                </h4>
+                <p className="text-slate-200 text-sm leading-relaxed">
+                  다수의 백엔드 개발자와 협업하며, 홀로 프론트엔드 환경을
+                  구축하고 책임감 있게 프로젝트를 완주한 경험이 있습니다.
+                </p>
+              </div>
+              <div className="bg-white/10 rounded-2xl p-5">
+                <h4 className="text-sm font-bold text-amber-300 mb-2">
+                  근거 있는 기술 선택
+                </h4>
+                <p className="text-slate-200 text-sm leading-relaxed">
+                  React, TypeScript, Tailwind CSS를 활용하며, 단순한 도구 사용을
+                  넘어 렌더링 및 메모리 최적화를 고민합니다.
+                </p>
+              </div>
+              <div className="bg-white/10 rounded-2xl p-5">
+                <h4 className="text-sm font-bold text-amber-300 mb-2">
+                  직관적인 데이터 시각화
+                </h4>
+                <p className="text-slate-200 text-sm leading-relaxed">
+                  대시보드 및 3D UI 적용 프로젝트를 통해 복잡한 데이터를 사용자
+                  친화적이고 인터랙티브하게 풀어내는 데 강점이 있습니다.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
