@@ -1,5 +1,6 @@
 import project1Readme from "./readmes/project1.md";
 import project2Readme from "./readmes/project2.md";
+import project3Readme from "./readmes/project3.md";
 
 export type ProjectAction =
   | { type: "readme"; content: string }
@@ -85,6 +86,35 @@ export const projects: Project[] = [
       {
         type: "figma",
         url: "https://www.figma.com/design/gLlzi0BI8A3EGoTf5UxbOl/%EC%A2%85%ED%95%A9%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=118-2&p=f&t=YZBp8Euzma2telTL-0",
+      },
+    ],
+  },
+  {
+    title: "미니 OTT 웹 플랫폼",
+    period: "2025.10.13 ~ 2025.10.27 (개인 프로젝트)",
+    description: "OTT 스트리밍 서비스를 모티브로 한 웹 플랫폼",
+    subDescription: [
+      "회원가입 (아이디/이메일 중복 검사, 프론트엔드 + 백엔드 유효성 검증)",
+      "로그인 / 로그아웃 (세션 기반 인증)",
+      "비밀번호 SHA-256 + Salt 해시 암호화",
+      "콘텐츠 목록 조회 (시리즈 / 영화 / 애니메이션 탭 필터링)",
+      "콘텐츠 상세 페이지 (트레일러 자동재생, 줄거리, 평점 등)",
+    ],
+    tech: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "MyBatis",
+    ],
+    link: "https://github.com/jonghyunRyu/ureca-mini-project-ott",
+    actions: [
+      { type: "readme", content: project3Readme },
+      {
+        type: "github",
+        url: "https://github.com/jonghyunRyu/ureca-mini-project-ott",
       },
     ],
   },
