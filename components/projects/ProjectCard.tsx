@@ -1,9 +1,10 @@
 "use client";
 
-import { BookOpenText, ExternalLink, Play } from "lucide-react";
+import { BookOpenText, ExternalLink, Image, Play } from "lucide-react";
 import { useState } from "react";
 import type { ProjectAction } from "@/data/projects";
 import Button from "../ui/Button";
+import ImageModal from "./ImageModal";
 import ReadmeModal from "./ReadmeModal";
 
 interface ProjectCardProps {
@@ -34,6 +35,7 @@ export default function ProjectCard({
   const mediaAction = actions.find((a) => a.type === "media");
   const linkActions = actions.filter((a) => a.type === "link");
   const figmaAction = actions.find((a) => a.type === "figma");
+  const imagesAction = actions.find((a) => a.type === "images");
 
   return (
     <>
@@ -139,11 +141,22 @@ export default function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="dark" size="sm" aria-label="Figma">
+                <Button variant="dark" size="sm" aria-label="영상">
                   <Play size={18} />
                   영상
                 </Button>
               </a>
+            )}
+            {imagesAction && imagesAction.type === "images" && (
+              <Button
+                variant="dark"
+                size="sm"
+                onClick={() => setActiveModal("images")}
+                aria-label="이미지 보기"
+              >
+                <Image size={16} />
+                이미지
+              </Button>
             )}
             {linkActions.map((action) =>
               action.type === "link" ? (
@@ -174,6 +187,15 @@ export default function ProjectCard({
           onClose={() => setActiveModal(null)}
           title={title}
           readme={readmeAction.content}
+        />
+      )}
+
+      {imagesAction && imagesAction.type === "images" && (
+        <ImageModal
+          isOpen={activeModal === "images"}
+          onClose={() => setActiveModal(null)}
+          title={title}
+          images={imagesAction.urls}
         />
       )}
     </>

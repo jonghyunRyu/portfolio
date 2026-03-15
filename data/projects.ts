@@ -7,7 +7,8 @@ export type ProjectAction =
   | { type: "github"; url: string }
   | { type: "media"; url: string }
   | { type: "link"; url: string; label?: string }
-  | { type: "figma"; url: string };
+  | { type: "figma"; url: string }
+  | { type: "images"; urls: string[] };
 
 export interface Project {
   title: string;
@@ -115,6 +116,15 @@ export const projects: Project[] = [
       {
         type: "github",
         url: "https://github.com/jonghyunRyu/ureca-mini-project-ott",
+      },
+      {
+        type: "images",
+        urls: [
+          "/images/OTT_Index.png",
+          "/images/OTT_SIGN_UP.png",
+          "/images/OTT_Content_Page.png",
+          "/images/OTT_Detail.png",
+        ],
       },
     ],
   },
