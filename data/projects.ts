@@ -5,9 +5,9 @@ import project3Readme from "./readmes/project3.md";
 export type ProjectAction =
   | { type: "readme"; content: string }
   | { type: "github"; url: string }
+  | { type: "figma"; url: string }
   | { type: "media"; url: string }
   | { type: "link"; url: string; label?: string }
-  | { type: "figma"; url: string }
   | { type: "images"; urls: string[] };
 
 export interface Project {
