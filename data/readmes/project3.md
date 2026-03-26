@@ -4,8 +4,8 @@ OTT 스트리밍 서비스를 모티브로 **콘텐츠 탐색 및 회원 인증 
 
 ## 📌 프로젝트 개요
 
-- **기간**: (작성)
-- **역할**: Full Stack Developer
+- **기간**: 2025.10.13 ~ 2025.10.27
+- **역할**: Full Stack
 - **기술 스택**:  
   HTML, CSS, JavaScript, Java, Spring Boot, MyBatis, MySQL
 
