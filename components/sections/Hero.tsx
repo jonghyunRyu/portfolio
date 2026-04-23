@@ -24,9 +24,9 @@ export default function Hero() {
           입니다
         </h1>
         <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          데이터를 직관적인 UI로 번역하고,
+          사용자 경험을 고민하고, 꾸준히 공부하고 기록하는
           <br />
-          주도적으로 아키텍처를 설계하는 프론트엔드 개발자 류종현입니다
+          프론트엔드 개발자입니다
         </p>
         <button
           type="button"

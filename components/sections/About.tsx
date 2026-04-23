@@ -44,35 +44,37 @@ export default function About() {
               소개
             </h3>
             <p className="text-lg font-semibold text-white mb-6 leading-relaxed">
-              복잡성을 단순함으로 설계하는 프론트엔드 개발자 <br />
-              류종현입니다.
+              사용자 경험을 고민하고, 꾸준히 공부하고 기록하는
+              <br />
+              프론트엔드 개발자 류종현입니다.
             </p>
             <div className="space-y-4">
               <div className="bg-white/10 rounded-2xl p-5">
                 <h4 className="text-sm font-bold text-amber-300 mb-2">
-                  주도적인 아키텍처 설계
+                  프론트엔드 환경을 직접 구축한 경험
                 </h4>
                 <p className="text-slate-200 text-sm leading-relaxed">
-                  다수의 백엔드 개발자와 협업하며, 홀로 프론트엔드 환경을
-                  구축하고 책임감 있게 프로젝트를 완주한 경험이 있습니다.
+                  8인 팀에서 유일한 프론트엔드 개발자로 프로젝트 환경 세팅부터
+                  배포까지 전 과정을 주도하며 완주했습니다.
                 </p>
               </div>
               <div className="bg-white/10 rounded-2xl p-5">
                 <h4 className="text-sm font-bold text-amber-300 mb-2">
-                  근거 있는 기술 선택
+                  기술 선택에 이유를 갖는 개발
                 </h4>
                 <p className="text-slate-200 text-sm leading-relaxed">
-                  React, TypeScript, Tailwind CSS를 활용하며, 단순한 도구 사용을
-                  넘어 렌더링 및 메모리 최적화를 고민합니다.
+                  React, TypeScript, Tailwind CSS를 활용하며, 왜 이 기술을
+                  선택했는지 설명할 수 있도록 학습하고 기술 블로그에 기록합니다.
                 </p>
               </div>
               <div className="bg-white/10 rounded-2xl p-5">
                 <h4 className="text-sm font-bold text-amber-300 mb-2">
-                  직관적인 데이터 시각화
+                  데이터를 UI로 풀어내는 경험
                 </h4>
                 <p className="text-slate-200 text-sm leading-relaxed">
-                  대시보드 및 3D UI 적용 프로젝트를 통해 복잡한 데이터를 사용자
-                  친화적이고 인터랙티브하게 풀어내는 데 강점이 있습니다.
+                  Chart.js, Mapbox, Three.js를 활용해 대시보드와 3D UI를
+                  구현하며, 복잡한 데이터를 사용자가 이해하기 쉬운 형태로
+                  시각화한 경험이 있습니다.
                 </p>
               </div>
             </div>
