@@ -67,7 +67,6 @@ const mainCategories: SkillCategory[] = [
         icon: <SiStyledcomponents className="text-pink-500" />,
         label: "styled-components",
       },
-      { icon: <SiThreedotjs />, label: "Three.js" },
       {
         icon: <span className="text-amber-700 font-bold text-xs">Z</span>,
         label: "Zustand",
@@ -92,14 +91,6 @@ const mainCategories: SkillCategory[] = [
       { icon: <SiNotion />, label: "Notion" },
       { icon: <SiJira className="text-blue-600" />, label: "Jira" },
       { icon: <SiVercel />, label: "Vercel" },
-      {
-        icon: <SiLefthook className="text-red-500" />,
-        label: "lefthook",
-      },
-      {
-        icon: <SiCoderabbit className="text-orange-500" />,
-        label: "CodeRabbit",
-      },
       { icon: <SiSlack />, label: "Slack" },
     ],
   },
@@ -110,8 +101,17 @@ const alsoWorkedWith: SkillCategory = {
   description: "프로젝트나 학습 과정에서 함께 다뤄 본 기술들",
   skills: [
     { icon: <FaJava className="text-red-500" />, label: "Java" },
+    { icon: <SiThreedotjs />, label: "Three.js" },
     { icon: <SiMysql className="text-blue-600" />, label: "MySQL" },
     { icon: <SiSpring className="text-green-500" />, label: "STS" },
+    {
+      icon: <SiLefthook className="text-red-500" />,
+      label: "lefthook",
+    },
+    {
+      icon: <SiCoderabbit className="text-orange-500" />,
+      label: "CodeRabbit",
+    },
   ],
 };
 
