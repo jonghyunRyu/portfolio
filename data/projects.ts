@@ -23,7 +23,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "OJO - CRM Admin Dashboard",
-    period: "2026.02 - 현재 개발중 (8명 팀 프로젝트 - 프론트 1명, 백엔드 7명)",
+    period: "2026.02 - 2026.03 (8명 팀 프로젝트 - 프론트 1명, 백엔드 7명)",
     description:
       "통신사 고객 데이터를 관리하고 분석하기 위한 CRM 어드민 대시보드",
     subDescription: [
